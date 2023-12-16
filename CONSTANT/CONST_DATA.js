@@ -94,6 +94,30 @@ const DATA = {
           return_period: 14,
           delivery_date: "10 Oct 2023",
           rating: { "stars": 4.2, "count": 5200 }
+        },
+        {
+          id: "009",
+          image: "images/8.jpg",
+          company: "Nivea Creme",
+          item_name: "Men Fresh Creme 150ml",
+          original_price: 285,
+          current_price: 142,
+          discount_percentage: 50,
+          return_period: 14,
+          delivery_date: "10 Oct 2023",
+          rating: { "stars": 4.2, "count": 5200 }
+        },
+        {
+          id: "010",
+          image: "images/8.jpg",
+          company: "Nivea Rolon",
+          item_name: "Men Fresh Rolon 150ml",
+          original_price: 285,
+          current_price: 142,
+          discount_percentage: 50,
+          return_period: 14,
+          delivery_date: "10 Oct 2023",
+          rating: { "stars": 4.2, "count": 5200 }
         }
       ]
     
