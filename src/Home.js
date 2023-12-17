@@ -17,7 +17,7 @@ const Home =()=>{
                 <h1>Name : {props.item.item_name}</h1>
                 <p>Company : {props.item.company}</p>
                 <p>Price : {props.item.current_price}</p>
-                <butotn className="bg-black text-white p-1 rounded">Add</butotn>
+                <button className="bg-black text-white m-2 p-1 rounded w-2/3 ">Add</button>
                 </div>
             )
         
@@ -25,8 +25,8 @@ const Home =()=>{
     }
 
     return (
-        <div className="container bg-stone-50">
-            <div className="flex flex-wrap m-5 ">
+        <div className="container m-auto bg-stone-50">
+            <div className="flex flex-wrap justify-center m-auto ">
                 { 
                     data.map((item)=>{
                         return(
