@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux'
 
 const Navbar = ()=>{
+    let items = useSelector(store=>store.cart.items)
+    // console.log(items.length);
+
     return (
         <div className=" flex justify-between p-4 bg-stone-200">
             <div>
                 <Link to={'/'}>
                 Logo
-                Title
                 </Link>
             </div>
             <div className="flex justify-between">
@@ -22,7 +25,7 @@ const Navbar = ()=>{
                 <ul className="flex">
                     <li className="m-2 p-1">Profile</li>
                     <li className="m-2 p-1">Wishlist</li>
-                    <li className="m-2 p-1"><Link to={'/bag'}>Bag</Link></li>
+                    <li className="m-2 p-1"><Link to={'/bag'}>Bag<span className="bg-red-500 text-white p-1 rounded-full">{items.length}</span></Link></li>
                 </ul>
             </div>
         </div>

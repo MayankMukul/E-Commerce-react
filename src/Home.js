@@ -1,23 +1,35 @@
 import DATA from "../CONSTANT/CONST_DATA.js";
 import { useEffect, useState } from "react";
+import { useSelector } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { addItem } from "./homePageSlice.js";
 
 const Home =()=>{
     const [data, setdata]= useState([]);
+    const dispatch = useDispatch();
 
     const getdata=()=>{
-        // console.log(DATA.items)
         setdata(DATA.items);
     }
     useEffect(()=>getdata(),[]);
 
+    let store = useSelector(store=>store.cart.items)
+    // console.log(store);
+
+    const handleAddItem = (item)=>{
+        // console.log('itemclicked',item)
+        dispatch(addItem(item));
+    }
+    
     const  ItemCard=(props)=>{
-            console.log(props)
+        // console.log(props.item)
             return(
                 <div className="bg-stone-300 m-2 w-52">
                 <h1>Name : {props.item.item_name}</h1>
                 <p>Company : {props.item.company}</p>
                 <p>Price : {props.item.current_price}</p>
-                <button className="bg-black text-white m-2 p-1 rounded w-2/3 ">Add</button>
+                <button className="bg-black text-white m-2 p-1 rounded w-2/3 "
+                onClick={()=>handleAddItem(props.item.id)}>Add</button>
                 </div>
             )
         
@@ -30,7 +42,6 @@ const Home =()=>{
                 { 
                     data.map((item)=>{
                         return(
-                        // <p key={item.id}>{item.item_name} </p>
                         <ItemCard item={item} key={item.item_id}/>
                         )
                     })
