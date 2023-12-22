@@ -1,9 +1,10 @@
+import { useSelector} from 'react-redux';
 
 const BagElement = ()=>{
 
     const dummyData = {
         id: "001",
-        image: "images/1.jpg",
+        image: "images/2.jpg",
         company: "Carlton London",
         item_name: "Rhodium-Plated CZ Floral Studs",
         original_price: 1045,
@@ -14,15 +15,22 @@ const BagElement = ()=>{
         rating: { "stars": 4.5, "count": 1400 }
       }
 
-    const BagItem = (props)=>{ 
+      const store  = useSelector(store =>store.cart.items );
+      // console.log(store[0]);
+      
+     
 
+      
+      
+      const BagItem = (props)=>{ 
+      console.log(props)
         return (
             <div className="flex bg-slate-400 h-20">
                 <div className="w-1/2">
-                <p>{props.data.image}</p>
+                <p>{props.data?.image}</p>
                 </div>
                 <div className="w-1/2">
-                <p>{props.data.item_name}</p>
+                <p>{props.data?.item_name}</p>
                 </div>
                 <div className="w-1/2 text-right">
                     <button>X</button>
@@ -55,8 +63,10 @@ const BagElement = ()=>{
           <div className=" bg-stone-200 w-2/3">
             <h1>BagItems</h1>
             <hr />
-            <BagItem data={dummyData}></BagItem>
-            <BagItem data={dummyData}></BagItem>
+            {
+
+            }
+            {/* <BagItem data={store[0]}></BagItem> */}
             <BagItem data={dummyData}></BagItem>
           </div>
           <div className="w-1/3 bg-stone-300">
