@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import homepage from './homePage';
+import homePageSlice from './homePageSlice';
 
 const store = configureStore({
     reducer:{
-        cart:homepage,
+        cart:homePageSlice,
     }
 })
 
-export default store
+export default store;
