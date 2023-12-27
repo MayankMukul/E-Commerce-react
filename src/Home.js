@@ -31,10 +31,10 @@ const Home =()=>{
     let items = useSelector(store=>store.cart.items)
     
     const  ItemCard=(props)=>{
-        console.log(props.item.id)
-        console.log(items);
+        // console.log(props.item.id)
+        // console.log(items);
         const elementFound = items.indexOf(props.item.id)>=0;
-        console.log(elementFound);
+        // console.log(elementFound);
 
             return(
                 <div className="bg-stone-300 m-2 w-52">
@@ -58,10 +58,8 @@ const Home =()=>{
         <div className="container m-auto bg-stone-50">
             <div className="flex flex-wrap justify-center m-auto ">
                 { 
-                    data.map((item)=>{
-                        return(
-                        <ItemCard item={item} key={item.item_id}/>
-                        )
+                 data.map((item)=>{
+                        return <ItemCard key={item.id} item={item}/>
                     })
                 }
                 

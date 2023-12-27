@@ -63,9 +63,7 @@ const BagElement = ()=>{
           <div className=" bg-stone-200 w-2/3">
             <h1>BagItems</h1>
             <hr />
-            {
-
-            }
+            
             {/* <BagItem data={store[0]}></BagItem> */}
             <BagItem data={dummyData}></BagItem>
           </div>
