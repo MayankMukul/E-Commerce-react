@@ -1,29 +1,32 @@
 import { useSelector} from 'react-redux';
+import { removeItem } from './homePageSlice';
+import { useDispatch } from 'react-redux';
 
 const BagElement = ()=>{
 
-    const dummyData = {
-        id: "001",
-        image: "images/2.jpg",
-        company: "Carlton London",
-        item_name: "Rhodium-Plated CZ Floral Studs",
-        original_price: 1045,
-        current_price: 606,
-        discount_percentage: 42,
-        return_period: 14,
-        delivery_date: "10 Oct 2023",
-        rating: { "stars": 4.5, "count": 1400 }
-      }
+    
+      let dispatch = useDispatch();
 
-      const store  = useSelector(store =>store.cart.items );
-      // console.log(store[0]);
+      const stolre  = useSelector(store =>store.cart.items );
+      const list  = useSelector(store =>store.itemList.items );
+      // console.log(list);
+      // console.log(store);
       
+      const itemInBag = list.filter(item =>{
+        let itemIndex =  store.indexOf(item.id);
+        if(itemIndex>=0) return true;
+      })
+
+      // console.log(itemInBag);
+
+      const handleremoveItem =(props)=>{
+        dispatch(removeItem(props))
+      }
      
 
       
       
       const BagItem = (props)=>{ 
-      console.log(props)
         return (
             <div className="flex bg-slate-400 h-20">
                 <div className="w-1/2">
@@ -33,7 +36,7 @@ const BagElement = ()=>{
                 <p>{props.data?.item_name}</p>
                 </div>
                 <div className="w-1/2 text-right">
-                    <button>X</button>
+                    <button onClick={()=>{handleremoveItem(props.data.id)}}>X</button>
                 </div>
             </div>
         )
@@ -47,7 +50,7 @@ const BagElement = ()=>{
                 <hr/>
                 <p className="flex justify-between"><span>Total MRP</span><span className="">Amount</span></p>
                 <p className="flex justify-between"><span>Discount on MRP</span><span>Amount</span></p>
-                <p className="flex justify-between"><span>Convenience Fee</span><apan>Ampunt</apan></p>
+                <p className="flex justify-between"><span>Convenience Fee</span><span>Ampunt</span></p>
                 <hr/>
                 <p className="flex justify-between font-bold">Total Amount Payable :<span className=""> RM 897.00</span></p>
                 <button className="m-2 p-1 rounded bg-black text-white">Place Order</button>
@@ -64,8 +67,14 @@ const BagElement = ()=>{
             <h1>BagItems</h1>
             <hr />
             
-            {/* <BagItem data={store[0]}></BagItem> */}
-            <BagItem data={dummyData}></BagItem>
+            {
+              itemInBag.map(item =>{
+                return (
+                  <BagItem data={item}></BagItem>
+                )
+              }
+              )
+            }
           </div>
           <div className="w-1/3 bg-stone-300">
             <h1>BagSummary</h1>
