@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import { useDispatch } from "react-redux";
 import { addItem, removeItem } from "./homePageSlice.js";
+import { addList } from "./itemSlice.js";
 
 const Home =()=>{
     const [data, setdata]= useState([]);
@@ -10,13 +11,14 @@ const Home =()=>{
 
     const getdata=()=>{
         setdata(DATA.items);
+        
     }
     useEffect(()=>getdata(),[]);
 
     let store = useSelector(store=>store.cart.items)
     // console.log(store);
     
-    
+    dispatch(addList(data));
 
     const handleAddItem = (item)=>{
         // console.log('itemclicked',item)

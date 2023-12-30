@@ -7,7 +7,7 @@ const itemSlice = createSlice({
     },
     reducers : {
             addList : (state, action)=>{
-                state.items.push(action.payload)
+                state.items = action.payload
             }
     }
 })

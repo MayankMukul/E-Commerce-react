@@ -11,7 +11,7 @@ const homePageSlice = createSlice({
                 state.items.push(action.payload)
             },
             removeItem:(state,action)=>{
-                state.items.splice(state.items.indexOf(action.payload),1);
+                state.items.splice(state.items.indexOf(action.payload),1);  
             }
     }
 

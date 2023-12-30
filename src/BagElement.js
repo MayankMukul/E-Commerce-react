@@ -7,13 +7,13 @@ const BagElement = ()=>{
     
       let dispatch = useDispatch();
 
-      const stolre  = useSelector(store =>store.cart.items );
+      const cart  = useSelector(store =>store.cart.items );
       const list  = useSelector(store =>store.itemList.items );
       // console.log(list);
       // console.log(store);
       
       const itemInBag = list.filter(item =>{
-        let itemIndex =  store.indexOf(item.id);
+        let itemIndex =  cart.indexOf(item.id);
         if(itemIndex>=0) return true;
       })
 
@@ -43,16 +43,25 @@ const BagElement = ()=>{
     }
 
     const BagSummary = (props)=>{
-        const noOfItem = 2;
+        // const noOfItem = 2;
+        let totalOriginalPrice = 0;
+        let totalmrp = 0;
+        itemInBag.map((item)=> {
+          // console.log(item.current_price)
+          totalOriginalPrice += item.original_price;
+          totalmrp += item.current_price;
+        })
+        // console.log(totalmrp);
+        console.log(itemInBag);
         return(
             <div className="m-2">
-                <p>Price Details({noOfItem}Items)</p>
+                <p>Price Details({cart.length}Items)</p>
                 <hr/>
-                <p className="flex justify-between"><span>Total MRP</span><span className="">Amount</span></p>
-                <p className="flex justify-between"><span>Discount on MRP</span><span>Amount</span></p>
-                <p className="flex justify-between"><span>Convenience Fee</span><span>Ampunt</span></p>
+                <p className="flex justify-between"><span>Total MRP</span><span className="">{totalOriginalPrice}</span></p>
+                <p className="flex justify-between"><span>Discount on MRP </span><span>-{totalOriginalPrice-totalmrp}</span></p>
+                <p className="flex justify-between"><span>Convenience Fee</span><span>Amount</span></p>
                 <hr/>
-                <p className="flex justify-between font-bold">Total Amount Payable :<span className=""> RM 897.00</span></p>
+                <p className="flex justify-between font-bold">Total Amount Payable :<span className=""> {totalmrp}</span></p>
                 <button className="m-2 p-1 rounded bg-black text-white">Place Order</button>
             </div>
         )
@@ -70,7 +79,7 @@ const BagElement = ()=>{
             {
               itemInBag.map(item =>{
                 return (
-                  <BagItem data={item}></BagItem>
+                  <BagItem data={item} key ={item.item_id}></BagItem>
                 )
               }
               )
