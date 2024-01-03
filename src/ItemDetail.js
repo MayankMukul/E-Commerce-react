@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom"; 
 import { useSelector, useDispatch } from "react-redux";
-// import { useDispatch } from 'react-redux';
-import { addItem } from "./homePageSlice";
+import { useDispatch } from "react-redux";
+import { addItem,removeItem } from "./homePageSlice";
+
 
 function ItemDetail() {
     const { item_id } = useParams();
@@ -15,8 +16,17 @@ function ItemDetail() {
     const dispatch = useDispatch();
     const handleaddItem=()=>{
         dispatch(addItem(item[0].id))
-        console.log(item[0].id);
+        // console.log(item[0].id);
     }
+    
+    const handleremoveItem=()=>{
+        dispatch(removeItem(item[0].id))
+        // console.log(item[0].id);
+    }
+
+    let itemsincart = useSelector(store=>store.cart.items)
+    const elementFound = itemsincart.indexOf(item_id)>=0;
+    // console.log(elementFound);
     
 
     return ( 
@@ -28,9 +38,18 @@ function ItemDetail() {
         <p>Original Price : {item[0].original_price}</p>
         <p>Current Price : {item[0].current_price}</p>
         <p>Rating : {item[0].rating.stars}</p>
-        <button className="bg-black text-white rounded m-1 p-1" 
-        onClick={()=>handleaddItem()}
-        >Add to cart</button>
+
+        {
+            elementFound?
+            (<button className="bg-black text-white rounded m-1 p-1" 
+            onClick={()=>handleremoveItem()}
+            >Remove</button>
+            ):
+            (<button className="bg-black text-white rounded m-1 p-1" 
+            onClick={()=>handleaddItem()}
+            >Add to cart</button>
+            )
+        }
         </div>
      );
 }
