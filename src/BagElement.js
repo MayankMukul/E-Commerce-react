@@ -52,10 +52,10 @@ const BagElement = ()=>{
           totalmrp += item.current_price;
         })
         // console.log(totalmrp);
-        console.log(itemInBag);
+        // console.log(itemInBag);
         return(
             <div className="m-2">
-                <p>Price Details({cart.length}Items)</p>
+                <p>Price Details({cart.length} Items)</p>
                 <hr/>
                 <p className="flex justify-between"><span>Total MRP</span><span className="">{totalOriginalPrice}</span></p>
                 <p className="flex justify-between"><span>Discount on MRP </span><span>-{totalOriginalPrice-totalmrp}</span></p>
@@ -69,24 +69,27 @@ const BagElement = ()=>{
 
     return (
       <div className="  bg-stone-400 w-5/6 h-2/3 m-auto p-2">
-        <h1>Bag Elements</h1>
+        <h1 className='text-xl font-bold'>Bag Elements</h1>
         <hr />
         <div className="flex  m-3">
           <div className=" bg-stone-200 w-2/3">
-            <h1>BagItems</h1>
+            <h1 className='text-lg font-bold'>BagItems</h1>
             <hr />
-            
+            {
+              (itemInBag.length==0)?<p className='text-center font-light italic'>No Item in bag.</p>:<></>
+            }
             {
               itemInBag.map(item =>{
                 return (
-                  <BagItem data={item} key ={item.item_id}></BagItem>
+                  <BagItem data={item} key={item.id}></BagItem>
                 )
               }
               )
             }
           </div>
           <div className="w-1/3 bg-stone-300">
-            <h1>BagSummary</h1>
+            <h1 className='text-lg font-bold'>BagSummary</h1>
+            
             <BagSummary></BagSummary>
             <hr />
           </div>
