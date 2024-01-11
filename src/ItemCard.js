@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addItem, removeItem } from './homePageSlice.js';
+import { addToWishList, removeFromWishList } from './wishlistSlice.js';
 
 const  ItemCard=(props)=>{
 
@@ -15,6 +16,15 @@ const  ItemCard=(props)=>{
     
     const handleRemoveItem = (item)=>{
         dispatch(removeItem(item));
+    }
+
+    const handleAddtoWishlist = (item)=>{
+      dispatch(addToWishList(item))
+    }
+
+    const handleRemovefromWishlist=(item)=>{
+      dispatch(removeFromWishList(item))
+      console.log(item);
     }
 
           return (
@@ -39,6 +49,10 @@ const  ItemCard=(props)=>{
                     Add
                   </button>
                 )}
+                <button className='bg-red-300 p-1 m-1 rounded' 
+                onClick={()=>handleAddtoWishlist(props.item.id)}>wishlist</button>
+                <button className='bg-red-300 p-1 m-1 rounded' 
+                onClick={()=>handleRemovefromWishlist(props.item.id)}>Remove from wishlist</button>
               
             </div>
           );
