@@ -7,6 +7,10 @@ const  ItemCard=(props)=>{
 
     let items = useSelector(store=>store.cart.items);
       const elementFound = items.indexOf(props.item.id)>=0;
+
+      const wishlist = useSelector(store => store.wishList.items);
+      const wishlistelementfound = wishlist.indexOf(props.item.id)>=0;
+      // console.log(wishlistelementfound)
     
       const dispatch = useDispatch();
 
@@ -24,7 +28,7 @@ const  ItemCard=(props)=>{
 
     const handleRemovefromWishlist=(item)=>{
       dispatch(removeFromWishList(item))
-      console.log(item);
+      // console.log(item);
     }
 
           return (
@@ -49,10 +53,16 @@ const  ItemCard=(props)=>{
                     Add
                   </button>
                 )}
-                <button className='bg-red-300 p-1 m-1 rounded' 
-                onClick={()=>handleAddtoWishlist(props.item.id)}>wishlist</button>
-                <button className='bg-red-300 p-1 m-1 rounded' 
-                onClick={()=>handleRemovefromWishlist(props.item.id)}>Remove from wishlist</button>
+                {
+                  wishlistelementfound?(
+                    <button className='bg-red-300 p-1 m-1 rounded' 
+                    onClick={()=>handleRemovefromWishlist(props.item.id)}>Remove from wishlist</button>
+                  ):
+                  (
+                    <button className='bg-red-300 p-1 m-1 rounded' 
+                    onClick={()=>handleAddtoWishlist(props.item.id)}>wishlist</button>
+                    )
+                }
               
             </div>
           );
