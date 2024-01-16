@@ -11,10 +11,13 @@ const wishlistSlice = createSlice({
         },
         removeFromWishList:(state, action)=> {
             state.items.splice(state.items.indexOf(action.payload),1);  
+        },  
+        clearWishList:(state)=>{
+            state.items=[];
         }
     }
 })
 
-export const{addToWishList ,removeFromWishList}  = wishlistSlice.actions;
+export const{addToWishList, removeFromWishList, clearWishList}  = wishlistSlice.actions;
 
 export default wishlistSlice.reducer;
