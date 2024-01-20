@@ -9,12 +9,15 @@ const profileSlice = createSlice({
         }
     },
     reducers : {
-        setProfile:(state,action) =>{
-
+        setProfileUsername:(state,action) =>{
+            state.items.username = action.payload;
+        },
+        setProfileEmail : (state, action)=>{
+            state.items.email=action.payload;
         }
     }
 })
 
-export const {setProfile}  = profileSlice.actions;
+export const {setProfileUsername, setProfileEmail}  = profileSlice.actions;
 
 export default profileSlice.reducer;
