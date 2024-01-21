@@ -20,24 +20,25 @@ export default function Profile() {
       <div>
         <h2 className="text-3xl font-bold text-center">Profile Section</h2>
       </div>
-      <div className='text-center '>
-        <div>
-          <h1>userName : { profile.username } </h1>
-          <h1>userEmail : { profile.email}</h1>
+      <div className='text-center flex justify-center '>
+        <div className='m-2 bg-stone-300 w-1/3 border-4 rounded'>
+        <h1 className='w-full bg-black text-white rounded p-2 '>User Info</h1>
+          <h1>Name : { profile.username } </h1>
+          <h1>Email : { profile.email}</h1>
         </div>
 
-        <form className="flex-row text-center bg-slate-100 w-1/3 mx-auto my-2   border-4 rounded-lg">
+        <form className=" text-center bg-slate-100 w-1/3  my-2   border-4 rounded-lg">
             <h1 className='w-full bg-black text-white rounded p-2'>Profile</h1>
           <div className='m-2'>
             <label htmlFor='name' >Name </label>
-            <input id='name' className="m-1 p-1 rounded " value={profileName} placeholder='Enter Name here...'
+            <input id='name' className="m-1 p-1 rounded " value={profileName} placeholder='Enter Name here...' required
             onChange={(e)=>{
               setprofileName(e.target.value )
             }}/>
           </div>
           <div className='m-2'>
             <label htmlFor='email'>Email Id </label>
-            <input id='email' className="m-1 p-1 rounded " value={profileEmail} placeholder='Enter Email here...'
+            <input id='email' className="m-1 p-1 rounded " value={profileEmail} placeholder='Enter Email here...' required  
             onChange={(e)=>{
               setprofileEmail(e.target.value )
             }}/>
