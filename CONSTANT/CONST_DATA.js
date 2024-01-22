@@ -11,7 +11,8 @@ const DATA = {
           discount_percentage: 42,
           return_period: 14,
           delivery_date: "10 Oct 2023",
-          rating: { "stars": 4.5, "count": 1400 }
+          rating: { "stars": 4.5, "count": 1400 },
+          tags:"mens"
         },
         {
           id: "002",
@@ -23,7 +24,8 @@ const DATA = {
           discount_percentage: 42,
           return_period: 14,
           delivery_date: "10 Oct 2023",
-          rating: { "stars": 4.3, "count": 24 }
+          rating: { "stars": 4.3, "count": 24 },
+          tags:"women"
         },
         {
           id: "003",
@@ -35,7 +37,8 @@ const DATA = {
           discount_percentage: 69,
           return_period: 14,
           delivery_date: "10 Oct 2023",
-          rating: { "stars": 4.1, "count": 249 }
+          rating: { "stars": 4.1, "count": 249 },
+          tags:"women"
         },
         {
           id: "004",
@@ -47,7 +50,8 @@ const DATA = {
           discount_percentage: 0,
           return_period: 14,
           delivery_date: "10 Oct 2023",
-          rating: { "stars": 5, "count": 10 }
+          rating: { "stars": 5, "count": 10 },
+          tags:"mens"
         },
         {
           id: "005",
@@ -59,7 +63,8 @@ const DATA = {
           discount_percentage: 65,
           return_period: 14,
           delivery_date: "10 Oct 2023",
-          rating: { "stars": 4.2, "count": 3500 }
+          rating: { "stars": 4.2, "count": 3500 },
+          tags:"mens"
         },
         {
           id: "006",
@@ -71,7 +76,8 @@ const DATA = {
           discount_percentage: 0,
           return_period: 14,
           delivery_date: "10 Oct 2023",
-          rating: { "stars": 0, "count": 0 }
+          rating: { "stars": 0, "count": 0 },
+          tags:"mens"
         },
         {
           id: "007",
@@ -81,7 +87,8 @@ const DATA = {
           original_price: 1599,
           current_price: 639,
           discount_percentage: 60,
-          rating: { "stars": 4.2, "count": 388 }
+          rating: { "stars": 4.2, "count": 388 },
+          tags:"mens"
         },
         {
           id: "008",
@@ -93,7 +100,8 @@ const DATA = {
           discount_percentage: 50,
           return_period: 14,
           delivery_date: "10 Oct 2023",
-          rating: { "stars": 4.2, "count": 5200 }
+          rating: { "stars": 4.2, "count": 5200 },
+          tags:"beauty"
         },
         {
           id: "009",
@@ -105,7 +113,8 @@ const DATA = {
           discount_percentage: 50,
           return_period: 14,
           delivery_date: "10 Oct 2023",
-          rating: { "stars": 4.2, "count": 5200 }
+          rating: { "stars": 4.2, "count": 5200 },
+          tags:"beauty"
         },
         {
           id: "010",
@@ -117,7 +126,8 @@ const DATA = {
           discount_percentage: 50,
           return_period: 14,
           delivery_date: "10 Oct 2023",
-          rating: { "stars": 4.2, "count": 5200 }
+          rating: { "stars": 4.2, "count": 5200 },
+          tags:"beauty"
         }
       ]
     
