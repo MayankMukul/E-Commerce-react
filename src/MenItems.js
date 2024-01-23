@@ -9,7 +9,8 @@ const MenItems = ()=>{
 
     return (
       <div className="container m-auto bg-stone-50">
-        <div className="flex flex-wrap justify-center m-auto">
+        <h1 className="text-center p-1 rounded bg-black text-white ">Mens Items</h1>
+        <div className="flex flex-wrap justify-center m-auto my-2">
           {mensItemList.map((item) => {
             return <ItemCard key={item.id} item={item} />;
           })}
