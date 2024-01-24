@@ -8,6 +8,12 @@ import ErrorElement from "./ErrorElement";
 import BagElement from "./BagElement.js";
 import { Provider } from 'react-redux';
 import store from "./store.js";
+import ItemDetail from "./ItemDetail.js"
+import MenItems from "./MenItems.js";
+import KidsItems from "./KidsItem.js";
+import WomenItems from './WomenItems.js';
+import Profile from "./Profile.js";
+import Wishlist from "./Wishlist.js";
 
 const Applayout = ()=>{
     return (
@@ -34,6 +40,24 @@ const appRouter = createBrowserRouter([
             {
                 path:"/bag",
                 element:<BagElement/>
+            },{
+              path:'/item/:item_id',
+              element:<ItemDetail/>
+            },{
+              path:'/men',
+              element:<MenItems/>,
+            },{
+              path:'/women',
+              element:<WomenItems/>,
+            },{
+              path:'/kids',
+              element:<KidsItems/>
+            },{
+              path:'/profile',
+              element:<Profile/>
+            },{
+              path:'/wishlist',
+              element:<Wishlist/>
             }
         ]
     }
