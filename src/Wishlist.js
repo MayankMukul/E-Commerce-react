@@ -11,7 +11,8 @@ export default function Wishlist() {
     // console.log(storeList);
     const cart  = useSelector(store=>store.cart.items);
     // console.log(cart);
-
+    const profile = useSelector(store=> store.profile.items)
+    const userName = profile.username;
     const itemOnWishlist = storeList.filter(item=>{
         let index = wishlist.indexOf(item.id);
         return (index>=0)?true:false;
@@ -26,7 +27,8 @@ export default function Wishlist() {
     
   return (
     <div className="m-auto w-2/3 bg-stone-100">
-      Wishlist
+      
+      <h1 className='w-full bg-black text-white rounded p-2'>{userName}'s Wishlist</h1>
       <div className="flex  m-auto">
         {itemOnWishlist.map((item) => {
           return <ItemCard item={item} key={item.id}></ItemCard>;
