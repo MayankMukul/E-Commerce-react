@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addItem, removeItem } from './homePageSlice.js';
 import { addToWishList, removeFromWishList } from './wishlistSlice.js';
+import { GoHeart } from "react-icons/go";
 
 const  ItemCard=(props)=>{
 
@@ -55,12 +56,12 @@ const  ItemCard=(props)=>{
                 )}
                 {
                   wishlistelementfound?(
-                    <button className='bg-red-300 p-1 m-1 rounded' 
-                    onClick={()=>handleRemovefromWishlist(props.item.id)}>Remove from wishlist</button>
+                    <button className='bg-red-300 p-1 m-1 rounded-xl' 
+                    onClick={()=>handleRemovefromWishlist(props.item.id)}><GoHeart/></button>
                   ):
                   (
-                    <button className='bg-red-300 p-1 m-1 rounded' 
-                    onClick={()=>handleAddtoWishlist(props.item.id)}>wishlist</button>
+                    <button className=' p-1 m-1 rounded' 
+                    onClick={()=>handleAddtoWishlist(props.item.id)}><GoHeart/></button>
                     )
                 }
               
