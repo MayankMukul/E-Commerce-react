@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import { IoBagHandleSharp } from "react-icons/io5";
+import { IoPerson } from "react-icons/io5";
+import { GoHeartFill } from "react-icons/go";
 
 
 const Navbar = ()=>{
@@ -24,9 +27,9 @@ const Navbar = ()=>{
                 </ul>
                 <input className="m-2 p-1 rounded-md w-96" placeholder="Search Here...."/>
                 <ul className="flex">
-                    <li className="m-2 p-1 text-center"><Link to={'/profile'}>Profile</Link></li>
-                    <li className="m-2 p-1"><Link to={'/wishlist'}>Wishlist</Link></li>
-                    <li className="m-2 p-1"><Link to={'/bag'}><span>Bag</span><span className="bg-red-500 text-white p-1 rounded-full">{items.length}</span></Link></li>
+                    <li className="m-2 p-1 text-center"><Link to={'/profile'}><IoPerson/>Profile</Link></li>
+                    <li className="m-2 p-1"><Link to={'/wishlist'}><GoHeartFill/>Wishlist</Link></li>
+                    <li className="m-2 p-1"><Link to={'/bag'}><span><IoBagHandleSharp />Bag</span><span className="bg-red-500 text-white p-1 rounded-full">{items.length}</span></Link></li>
                 </ul>
             </div>
         </div>
