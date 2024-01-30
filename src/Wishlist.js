@@ -29,7 +29,7 @@ export default function Wishlist() {
     <div className="m-auto w-2/3 bg-stone-100">
       
       <h1 className='w-full bg-black text-white rounded p-2'>{userName}'s Wishlist</h1>
-      <div className="flex  m-auto">
+      <div className="flex flex-wrap  m-auto">
         {itemOnWishlist.map((item) => {
           return <ItemCard item={item} key={item.id}></ItemCard>;
         })}
