@@ -8,7 +8,7 @@ function KidsItems() {
 
     return ( 
         <div className="container m-auto bg-stone-50">
-            <h1 className="text-center my-5">Kids Items</h1>
+            <h1 className="text-center p-1 rounded bg-black text-white ">Kids Items</h1>
             <div className="flex flex-wrap justify-center m-auto">
           {mensItemList.map((item) => {
             return <ItemCard key={item.id} item={item} />;
