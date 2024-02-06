@@ -12,7 +12,7 @@ const Navbar = ()=>{
     // console.log(items.length);
 
     const [searchText, setsearchText] = useState('');
-    console.log(searchText);
+    // console.log(searchText);
 
     return (
         <div className=" flex justify-between p-4 bg-stone-200">
@@ -31,9 +31,12 @@ const Navbar = ()=>{
                     <li className="m-2 p-1">STUDIO</li>
                 </ul>
                 <button className=" p-2 mt-1 bg-white text-black h-10 rounded-s-lg"
-                onClick={()=>{
-                    window.location='/search/'+ searchText;
-                }}><IoSearch/></button>
+                // onClick={()=>{
+                //     // window.location='/search/'+ searchText;
+                //     console.log(searchText);
+                // }}
+                >
+                    <Link to={`/search/${searchText}`}><IoSearch/></Link></button>
                 <input className="p-1 mr-2 mt-1 rounded-e-lg w-96 h-10 focus:outline-none" placeholder="Search Here...."
                 onChange={(text)=>{
                     setsearchText(text.target.value);
