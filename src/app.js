@@ -14,6 +14,7 @@ import KidsItems from "./KidsItem.js";
 import WomenItems from './WomenItems.js';
 import Profile from "./Profile.js";
 import Wishlist from "./Wishlist.js";
+import SearchElement from "./SearchElement.js";
 
 const Applayout = ()=>{
     return (
@@ -58,6 +59,9 @@ const appRouter = createBrowserRouter([
             },{
               path:'/wishlist',
               element:<Wishlist/>
+            },{
+              path:'/search/:name',
+              element:<SearchElement/>
             }
         ]
     }
