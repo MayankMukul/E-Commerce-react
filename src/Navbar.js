@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { IoBagHandleSharp } from "react-icons/io5";
 import { IoPerson } from "react-icons/io5";
@@ -13,6 +13,8 @@ const Navbar = ()=>{
 
     const [searchText, setsearchText] = useState('');
     // console.log(searchText);
+
+    const navigate = useNavigate();
 
     return (
         <div className=" flex justify-between p-4 bg-stone-200">
@@ -37,10 +39,20 @@ const Navbar = ()=>{
                 // }}
                 >
                     <Link to={`/search/${searchText}`}><IoSearch/></Link></button>
-                <input className="p-1 mr-2 mt-1 rounded-e-lg w-96 h-10 focus:outline-none" placeholder="Search Here...."
+                <input className="p-1 mr-2 mt-1 rounded-e-lg w-96 h-10 focus:outline-none" placeholder="Search By Name..."
+                onKeyUp={(e)=>{
+                    
+                    if(e.key==="Enter"){
+                        console.log('enter')
+                        navigate(`/search/${searchText}`);
+                    }
+                    }}
                 onChange={(text)=>{
                     setsearchText(text.target.value);
+                    // console.log(text.key)
+                   
                 }
+                
                 }/>
                 <ul className="flex">
                     <li className="m-auto p-1 text-sm"><Link to={'/profile'}><IoPerson className="m-auto"/>Profile</Link></li>
