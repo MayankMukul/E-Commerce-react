@@ -29,8 +29,8 @@ const Navbar = ()=>{
                     <li className="m-2 p-1"><Link to={'/men'}>MEN</Link></li>
                     <li className="m-2 p-1"><Link to={'/women'}>WOMEN</Link></li>
                     <li className="m-2 p-1"><Link to={'/kids'}>KIDS</Link></li>
-                    <li className="m-2 p-1">BEAUTY</li>
-                    <li className="m-2 p-1">STUDIO</li>
+                    <li className="m-2 p-1"><Link to={'/beauty'}>BEAUTY</Link></li>
+                    <li className="m-2 p-1"><Link to={'/studio'}>STUDIO</Link></li>
                 </ul>
                 <button className=" p-2 mt-1 bg-white text-black h-10 rounded-s-lg"
                 // onClick={()=>{
