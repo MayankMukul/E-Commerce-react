@@ -24,7 +24,7 @@ const Navbar = ()=>{
                 </Link>
             </div>
             <div className="flex justify-between">
-                <ul className="flex flex-wrap">
+                <ul className="flex flex-wrap max-md:hidden">
                     <li className="m-2 p-1"><Link to={'/'}>HOME</Link></li>
                     <li className="m-2 p-1"><Link to={'/men'}>MEN</Link></li>
                     <li className="m-2 p-1"><Link to={'/women'}>WOMEN</Link></li>
@@ -32,14 +32,14 @@ const Navbar = ()=>{
                     <li className="m-2 p-1"><Link to={'/beauty'}>BEAUTY</Link></li>
                     <li className="m-2 p-1"><Link to={'/studio'}>STUDIO</Link></li>
                 </ul>
-                <button className=" p-2 mt-1 bg-white text-black h-10 rounded-s-lg"
+                <button className=" p-2 mt-1 bg-white text-black h-10 rounded-s-lg max-lg:rounded max-lg:bg-stone-200"
                 // onClick={()=>{
                 //     // window.location='/search/'+ searchText;
                 //     console.log(searchText);
                 // }}
                 >
                     <Link to={`/search/${searchText}`}><IoSearch/></Link></button>
-                <input className="p-1 mr-2 mt-1 rounded-e-lg w-96 h-10 focus:outline-none" placeholder="Search By Name..."
+                <input className="p-1 mr-2 mt-1 rounded-e-lg w-72 h-10 focus:outline-none max-lg:hidden" placeholder="Search By Name..."
                 onKeyUp={(e)=>{
                     
                     if(e.key==="Enter"){
@@ -55,12 +55,14 @@ const Navbar = ()=>{
                 
                 }/>
                 <ul className="flex">
-                    <li className="m-auto p-1 text-sm"><Link to={'/profile'}><IoPerson className="m-auto"/>Profile</Link></li>
-                    <li className="m-2 p-1 text-sm"><Link to={'/wishlist'}><GoHeartFill className="m-auto"/>Wishlist</Link></li>
-                    <li className="m-2 p-1 text-sm"><Link to={'/bag'}><span><IoBagHandleSharp className="m-auto"/>Bag</span>
+                    <li className="m-2 p-1 text-sm"><Link to={'/profile'}><IoPerson className="m-auto"/><span className="max-lg:hidden">Profile</span></Link></li>
+                    <li className="m-2 p-1 text-sm"><Link to={'/wishlist'}><GoHeartFill className="m-auto"/><span className="max-lg:hidden">Wishlist</span></Link></li>
+                    <li className="m-2 p-1 text-sm"><Link to={'/bag'}><IoBagHandleSharp className="m-auto"/>
                     {(items.length!=0)?
-                    <span className="bg-red-500 text-white p-1 rounded-3xl">{items.length}</span>
+                    <span className="bg-red-500 text-white  rounded">{items.length}</span>
                     :<></>}
+                    
+                    <span className="max-lg:hidden">Bag</span>
                     </Link></li>
                 </ul>
             </div>
