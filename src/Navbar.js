@@ -5,6 +5,7 @@ import { IoPerson } from "react-icons/io5";
 import { GoHeartFill } from "react-icons/go";
 import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
+import { HiViewList } from "react-icons/hi";
 
 
 const Navbar = ()=>{
@@ -32,7 +33,8 @@ const Navbar = ()=>{
                     <li className="m-2 p-1"><Link to={'/beauty'}>BEAUTY</Link></li>
                     <li className="m-2 p-1"><Link to={'/studio'}>STUDIO</Link></li>
                 </ul>
-                <button className=" p-2 mt-1 bg-white text-black h-10 rounded-s-lg max-lg:rounded max-lg:bg-stone-200"
+                
+                <button className=" p-2 mt-1 bg-white text-black h-10 rounded-s-lg max-lg:hidden"
                 // onClick={()=>{
                 //     // window.location='/search/'+ searchText;
                 //     console.log(searchText);
@@ -55,11 +57,13 @@ const Navbar = ()=>{
                 
                 }/>
                 <ul className="flex">
+                    <li className="m-2 p-1 text-sm lg:hidden"><IoSearch className=""/></li>
+                    <li className="m-2 p-1 text-sm md:hidden"><HiViewList className=" "/></li>
                     <li className="m-2 p-1 text-sm"><Link to={'/profile'}><IoPerson className="m-auto"/><span className="max-lg:hidden">Profile</span></Link></li>
                     <li className="m-2 p-1 text-sm"><Link to={'/wishlist'}><GoHeartFill className="m-auto"/><span className="max-lg:hidden">Wishlist</span></Link></li>
                     <li className="m-2 p-1 text-sm"><Link to={'/bag'}><IoBagHandleSharp className="m-auto"/>
                     {(items.length!=0)?
-                    <span className="bg-red-500 text-white  rounded">{items.length}</span>
+                    <span className="bg-red-500 absolute inline-flex items-center justify-center w-4 h-4  top-5 right-5 p-0.5 text-xs font-thin text-white  rounded-full">{items.length}</span>
                     :<></>}
                     
                     <span className="max-lg:hidden">Bag</span>
