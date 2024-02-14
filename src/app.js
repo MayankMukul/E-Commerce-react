@@ -12,6 +12,8 @@ import ItemDetail from "./ItemDetail.js"
 import MenItems from "./MenItems.js";
 import KidsItems from "./KidsItem.js";
 import WomenItems from './WomenItems.js';
+import BeautyItem from "./BeautyItem.js";
+import Studio from "./Studio.js";
 import Profile from "./Profile.js";
 import Wishlist from "./Wishlist.js";
 import SearchElement from "./SearchElement.js";
@@ -53,6 +55,12 @@ const appRouter = createBrowserRouter([
             },{
               path:'/kids',
               element:<KidsItems/>
+            },{
+              path:'/beauty',
+              element:<BeautyItem/>
+            },{
+              path:'/studio',
+              element:<Studio/>
             },{
               path:'/profile',
               element:<Profile/>
