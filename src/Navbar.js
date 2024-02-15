@@ -18,8 +18,12 @@ const Navbar = ()=>{
     const navigate = useNavigate();
 
     return (
+        <div>
+
+        
         <div className=" flex justify-between p-4 bg-stone-200">
-            <div>
+            <div className="self-center">
+            <span className=" m-1 p-1 text-sm md:hidden"><HiViewList className="inline-block "/></span>
                 <Link to={'/'}>
                 Logo
                 </Link>
@@ -57,11 +61,10 @@ const Navbar = ()=>{
                 
                 }/>
                 <ul className="flex">
-                    <li className="m-2 p-1 text-sm lg:hidden"><IoSearch className=""/></li>
-                    <li className="m-2 p-1 text-sm md:hidden"><HiViewList className=" "/></li>
-                    <li className="m-2 p-1 text-sm"><Link to={'/profile'}><IoPerson className="m-auto"/><span className="max-lg:hidden">Profile</span></Link></li>
-                    <li className="m-2 p-1 text-sm"><Link to={'/wishlist'}><GoHeartFill className="m-auto"/><span className="max-lg:hidden">Wishlist</span></Link></li>
-                    <li className="m-2 p-1 text-sm"><Link to={'/bag'}><IoBagHandleSharp className="m-auto"/>
+                    <li className="m-2 max-sm:m-1 p-1 text-sm lg:hidden"><IoSearch className=""/></li>
+                    <li className="m-2 max-sm:m-1 p-1 text-sm"><Link to={'/profile'}><IoPerson className="m-auto"/><span className="max-lg:hidden">Profile</span></Link></li>
+                    <li className="m-2 max-sm:m-1 p-1 text-sm"><Link to={'/wishlist'}><GoHeartFill className="m-auto"/><span className="max-lg:hidden">Wishlist</span></Link></li>
+                    <li className="m-2 max-sm:m-1 p-1 text-sm"><Link to={'/bag'}><IoBagHandleSharp className="m-auto"/>
                     {(items.length!=0)?
                     <span className="bg-red-500 absolute inline-flex items-center justify-center w-4 h-4  top-5 right-5 p-0.5 text-xs font-thin text-white  rounded-full">{items.length}</span>
                     :<></>}
@@ -69,6 +72,18 @@ const Navbar = ()=>{
                     <span className="max-lg:hidden">Bag</span>
                     </Link></li>
                 </ul>
+            </div>
+        </div>
+            <div className="list flex justify-between bg-stone-200">
+            <ul className="block  w-11/12 md:hidden">
+                    <li className="m-2 p-1"><Link to={'/'}>HOME</Link></li>
+                    <li className="m-2 p-1"><Link to={'/men'}>MEN</Link></li>
+                    <li className="m-2 p-1"><Link to={'/women'}>WOMEN</Link></li>
+                    <li className="m-2 p-1"><Link to={'/kids'}>KIDS</Link></li>
+                    <li className="m-2 p-1"><Link to={'/beauty'}>BEAUTY</Link></li>
+                    <li className="m-2 p-1"><Link to={'/studio'}>STUDIO</Link></li>
+                </ul>
+            <button className="1/12">X</button>
             </div>
         </div>
     )
