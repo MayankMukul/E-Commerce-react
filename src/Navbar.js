@@ -74,16 +74,16 @@ const Navbar = ()=>{
                 </ul>
             </div>
         </div>
-            <div className="list flex justify-between bg-stone-200">
-            <ul className="block  w-11/12 md:hidden">
-                    <li className="m-2 p-1"><Link to={'/'}>HOME</Link></li>
-                    <li className="m-2 p-1"><Link to={'/men'}>MEN</Link></li>
-                    <li className="m-2 p-1"><Link to={'/women'}>WOMEN</Link></li>
-                    <li className="m-2 p-1"><Link to={'/kids'}>KIDS</Link></li>
-                    <li className="m-2 p-1"><Link to={'/beauty'}>BEAUTY</Link></li>
-                    <li className="m-2 p-1"><Link to={'/studio'}>STUDIO</Link></li>
+            <div className="list flex  bg-stone-200  md:hidden ">
+            <ul className="block  w-11/12">
+                    <li className="m-2 ml-6 p-1"><Link to={'/'}>HOME</Link></li>
+                    <li className="m-2 ml-6 p-1"><Link to={'/men'}>MEN</Link></li>
+                    <li className="m-2 ml-6 p-1"><Link to={'/women'}>WOMEN</Link></li>
+                    <li className="m-2 ml-6 p-1"><Link to={'/kids'}>KIDS</Link></li>
+                    <li className="m-2 ml-6 p-1"><Link to={'/beauty'}>BEAUTY</Link></li>
+                    <li className="m-2 ml-6 p-1"><Link to={'/studio'}>STUDIO</Link></li>
                 </ul>
-            <button className="1/12">X</button>
+            <button className="w-1/12 h-10">X</button>
             </div>
         </div>
     )
