@@ -21,6 +21,12 @@ const Navbar = ()=>{
         setshowList(!showList);
     }
 
+    const [searchbar, setSearchBar]=useState(false);
+
+    const toggleSearchBar=()=>{
+      setSearchBar(!searchbar);
+    }
+
     const navigate = useNavigate();
 
     return (
@@ -84,7 +90,9 @@ const Navbar = ()=>{
             />
             <ul className="flex">
               <li className="m-2 max-sm:m-1 p-1 text-sm lg:hidden">
-                <IoSearch className="" />
+                <IoSearch className="" onClick={
+                  () => {toggleSearchBar()}
+                } />
               </li>
               <li className="m-2 max-sm:m-1 p-1 text-sm">
                 <Link to={"/profile"}>
@@ -115,6 +123,38 @@ const Navbar = ()=>{
             </ul>
           </div>
         </div>
+       
+       {
+          (searchbar)?
+        <div className="searchbar p-2 bg-stone-200 text-center lg:hidden">
+        <button
+              className="p-1  bg-white text-black  rounded-s-lg"
+              // onClick={()=>{
+              //     // window.location='/search/'+ searchText;
+              //     console.log(searchText);
+              // }}
+            >
+              <Link to={`/search/${searchText}`}>
+                <IoSearch />
+              </Link>
+            </button>
+            <input
+              className="p-1   rounded-e-lg w-72 h-6 focus:outline-none"
+              placeholder="Search By Name..."
+              onKeyUp={(e) => {
+                if (e.key === "Enter") {
+                  console.log("enter");
+                  navigate(`/search/${searchText}`);
+                }
+              }}
+              onChange={(text) => {
+                setsearchText(text.target.value);
+                // console.log(text.key)
+              }}
+            />
+        </div>:<></>
+       }
+
         {showList ? (
           <div className="list flex  bg-stone-200  md:hidden ">
             <ul className="block  w-11/12">
