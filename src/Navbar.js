@@ -63,13 +63,7 @@ const Navbar = ()=>{
               </li>
             </ul>
 
-            <button
-              className=" p-2 mt-1 bg-white text-black h-10 rounded-s-lg max-lg:hidden"
-              // onClick={()=>{
-              //     // window.location='/search/'+ searchText;
-              //     console.log(searchText);
-              // }}
-            >
+            <button className=" p-2 mt-1 bg-white text-black h-10 rounded-s-lg max-lg:hidden">
               <Link to={`/search/${searchText}`}>
                 <IoSearch />
               </Link>
@@ -90,9 +84,12 @@ const Navbar = ()=>{
             />
             <ul className="flex">
               <li className="m-2 max-sm:m-1 p-1 text-sm lg:hidden">
-                <IoSearch className="" onClick={
-                  () => {toggleSearchBar()}
-                } />
+                <IoSearch
+                  className=""
+                  onClick={() => {
+                    toggleSearchBar();
+                  }}
+                />
               </li>
               <li className="m-2 max-sm:m-1 p-1 text-sm">
                 <Link to={"/profile"}>
@@ -123,23 +120,16 @@ const Navbar = ()=>{
             </ul>
           </div>
         </div>
-       
-       {
-          (searchbar)?
-        <div className="searchbar p-2 bg-stone-200 text-center lg:hidden">
-        <button
-              className="p-1  bg-white text-black  rounded-s-lg"
-              // onClick={()=>{
-              //     // window.location='/search/'+ searchText;
-              //     console.log(searchText);
-              // }}
-            >
+
+        {searchbar ? (
+          <div className="searchbar pb-3 bg-stone-200 text-center lg:hidden">
+            <button className="p-1  bg-white text-black  rounded-s-lg">
               <Link to={`/search/${searchText}`}>
-                <IoSearch />
+                <IoSearch className="inline" />
               </Link>
             </button>
             <input
-              className="p-1   rounded-e-lg w-72 h-6 focus:outline-none"
+              className="p-1   rounded-e-lg w-2/3  focus:outline-none"
               placeholder="Search By Name..."
               onKeyUp={(e) => {
                 if (e.key === "Enter") {
@@ -152,48 +142,73 @@ const Navbar = ()=>{
                 // console.log(text.key)
               }}
             />
-        </div>:<></>
-       }
+          </div>
+        ) : (
+          <></>
+        )}
 
         {showList ? (
           <div className="list flex  bg-stone-200  md:hidden ">
             <ul className="block  w-11/12">
               <li className="m-2 ml-6 p-1">
-                <Link to={"/"} onClick={() => {
-                toggleShowList();
-              }
-            }
-              >HOME</Link>
+                <Link
+                  to={"/"}
+                  onClick={() => {
+                    toggleShowList();
+                  }}
+                >
+                  HOME
+                </Link>
               </li>
               <li className="m-2 ml-6 p-1">
-                <Link to={"/men"} onClick={() => {
-                toggleShowList();
-              }
-            }>MEN</Link>
+                <Link
+                  to={"/men"}
+                  onClick={() => {
+                    toggleShowList();
+                  }}
+                >
+                  MEN
+                </Link>
               </li>
               <li className="m-2 ml-6 p-1">
-                <Link to={"/women"} onClick={() => {
-                toggleShowList();
-              }
-            }>WOMEN</Link>
+                <Link
+                  to={"/women"}
+                  onClick={() => {
+                    toggleShowList();
+                  }}
+                >
+                  WOMEN
+                </Link>
               </li>
               <li className="m-2 ml-6 p-1">
-                <Link to={"/kids"} onClick={() => {
-                toggleShowList();
-              }
-            }>KIDS</Link>
+                <Link
+                  to={"/kids"}
+                  onClick={() => {
+                    toggleShowList();
+                  }}
+                >
+                  KIDS
+                </Link>
               </li>
               <li className="m-2 ml-6 p-1">
-                <Link to={"/beauty"} onClick={() => {
-                toggleShowList();
-              }
-            }>BEAUTY</Link>
+                <Link
+                  to={"/beauty"}
+                  onClick={() => {
+                    toggleShowList();
+                  }}
+                >
+                  BEAUTY
+                </Link>
               </li>
               <li className="m-2 ml-6 p-1">
-                <Link to={"/studio"} onClick={() => {
-                toggleShowList();
-              }
-            }>STUDIO</Link>
+                <Link
+                  to={"/studio"}
+                  onClick={() => {
+                    toggleShowList();
+                  }}
+                >
+                  STUDIO
+                </Link>
               </li>
             </ul>
             <button
