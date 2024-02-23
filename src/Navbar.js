@@ -6,6 +6,7 @@ import { GoHeartFill } from "react-icons/go";
 import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { HiViewList } from "react-icons/hi";
+import { FcShop } from "react-icons/fc";
 
 
 const Navbar = ()=>{
@@ -39,26 +40,28 @@ const Navbar = ()=>{
                 onClick={() => toggleShowList()}
               />
             </span>
-            <Link to={"/"}>Logo</Link>
+            <Link to={"/"}><FcShop className="h-10 w-10"/></Link>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between items-center">
             <ul className="flex flex-wrap max-md:hidden">
-              <li className="m-2 p-1">
-                <Link to={"/"}>HOME</Link>
+              <li className="m-2 p-1 hover:bg-black hover:text-white hover:rounded hover:cursor-pointer">
+                <Link to={"/"}>
+                  HOME
+                  </Link>
               </li>
-              <li className="m-2 p-1">
+              <li className="m-2 p-1 hover:bg-black hover:text-white hover:rounded hover:cursor-pointer">
                 <Link to={"/men"}>MEN</Link>
               </li>
-              <li className="m-2 p-1">
+              <li className="m-2 p-1 hover:bg-black hover:text-white hover:rounded hover:cursor-pointer">
                 <Link to={"/women"}>WOMEN</Link>
               </li>
-              <li className="m-2 p-1">
+              <li className="m-2 p-1 hover:bg-black hover:text-white hover:rounded hover:cursor-pointer">
                 <Link to={"/kids"}>KIDS</Link>
               </li>
-              <li className="m-2 p-1">
+              <li className="m-2 p-1 hover:bg-black hover:text-white hover:rounded hover:cursor-pointer">
                 <Link to={"/beauty"}>BEAUTY</Link>
               </li>
-              <li className="m-2 p-1">
+              <li className="m-2 p-1 hover:bg-black hover:text-white hover:rounded hover:cursor-pointer">
                 <Link to={"/studio"}>STUDIO</Link>
               </li>
             </ul>
@@ -91,7 +94,7 @@ const Navbar = ()=>{
                   }}
                 />
               </li>
-              <li className="m-2 max-sm:m-1 p-1 text-sm">
+              <li className="m-2 max-sm:m-1 p-1 text-sm ">
                 <Link to={"/profile"}>
                   <IoPerson className="m-auto" />
                   <span className="max-lg:hidden">Profile</span>
@@ -107,9 +110,10 @@ const Navbar = ()=>{
                 <Link to={"/bag"}>
                   <IoBagHandleSharp className="m-auto" />
                   {items.length != 0 ? (
-                    <span className="bg-red-500 absolute inline-flex items-center justify-center w-4 h-4  top-5 right-5 p-0.5 text-xs font-thin text-white  rounded-full">
+                    <span className="bg-red-500 absolute inline-flex items-center justify-center max-md:w-3 max-md:h-3 w-4 h-4 top-4 right-5 p-0.5 text-xs font-thin text-white  rounded-full">
                       {items.length}
                     </span>
+                    
                   ) : (
                     <></>
                   )}
