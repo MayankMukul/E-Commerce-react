@@ -33,7 +33,7 @@ const Navbar = ()=>{
     return (
       <div>
         <div className=" flex justify-between p-4 bg-stone-200">
-          <div className="self-center">
+          <div className=" flex self-center">
             <span className=" m-1 p-1 text-sm md:hidden">
               <HiViewList
                 className="inline-block"
@@ -106,11 +106,11 @@ const Navbar = ()=>{
                   <span className="max-lg:hidden">Wishlist</span>
                 </Link>
               </li>
-              <li className="m-2 max-sm:m-1 p-1 text-sm">
+              <li className=" relative m-2 max-sm:m-1 p-1 text-sm">
                 <Link to={"/bag"}>
                   <IoBagHandleSharp className="m-auto" />
                   {items.length != 0 ? (
-                    <span className="bg-red-500 absolute inline-flex items-center justify-center max-md:w-3 max-md:h-3 w-4 h-4 top-4 right-5 p-0.5 text-xs font-thin text-white  rounded-full">
+                    <span className="bg-red-500 absolute inline-flex items-center justify-center  w-3 h-3 top-0 right-0 p-0.5 text-xs font-thin text-white  rounded-full">
                       {items.length}
                     </span>
                     
