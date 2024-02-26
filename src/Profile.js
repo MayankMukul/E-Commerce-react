@@ -77,14 +77,21 @@ export default function Profile() {
       </div>
 
       {showModal ? (
-        <div className="fixed top-0 left-0 w-full h-full  bg-black bg-opacity-70 ">
-          <div className=' m-auto  bg-white w-1/3 h-40 rounded shadow-lg'>
-            <h1 className='bg-black text-white p-2 rounded'>Signed Up Successfully!</h1>
-            <div className='m-2 text-center'>
-            <h1>Name : {profile.username} </h1>
-          <h1>Email : {profile.email}</h1>
+        <div className="fixed top-0 left-0 w-full h-full  bg-black bg-opacity-70 p-5  ">
+          <div className=" m-auto  bg-white w-1/3 max-sm:w-5/6  rounded shadow-lg text-center">
+            <h1 className="bg-black text-white p-2 rounded">
+              Signed Up Successfully!
+            </h1>
+            <div className="m-2 ">
+              <h1>Name : {profile.username} </h1>
+              <h1>Email : {profile.email}</h1>
             </div>
-            <button className='bg-black text-white rounded p-1 m-1' onClick={() => handleModal()}>Close</button>
+            <button
+              className="bg-black text-white rounded p-1 m-2 "
+              onClick={() => handleModal()}
+            >
+              Close
+            </button>
           </div>
         </div>
       ) : null}
