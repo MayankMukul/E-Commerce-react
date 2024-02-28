@@ -3,7 +3,7 @@ const DATA = {
       [
         {
           id: "001",
-          image: "images/1.jpg",
+          image: "./images/1.jpg",
           company: "Carlton London",
           item_name: "Rhodium-Plated CZ Floral Studs",
           original_price: 1045,
@@ -128,7 +128,73 @@ const DATA = {
           delivery_date: "10 Oct 2023",
           rating: { "stars": 4.2, "count": 5200 },
           tags:"beauty"
+        },
+        {
+          id: "011",
+          image: "images/11.png",
+          company: "KINSEY",
+          item_name: "Boys Pluto Printed T-shirt",
+          original_price: 799,
+          current_price: 199,
+          discount_percentage: 75,
+          return_period: 14,
+          delivery_date: "10 Oct 2023",
+          rating: { "stars": 4.2, "count": 434 },
+          tags:"kids"
+        },
+        {
+          id: "012",
+          image: "images/12.png",
+          company: "BONKIDS",
+          item_name: "Boys Mickey Mouse Printed T-shirt",
+          original_price: 1332,
+          current_price: 399,
+          discount_percentage: 75,
+          return_period: 14,
+          delivery_date: "10 Oct 2023",
+          rating: { "stars": 4.5, "count": 1434 },
+          tags:"kids"
+        },
+        {
+          id: "013",
+          image: "images/13.png",
+          company: "Jack & Jones",
+          item_name: "Boys T-shirt",
+          original_price: 599,
+          current_price: 299,
+          discount_percentage: 75,
+          return_period: 14,
+          delivery_date: "10 Oct 2023",
+          rating: { "stars": 4.3, "count": 434 },
+          tags:"kids"
+        },
+        {
+          id: "014",
+          image: "images/14.png",
+          company: "Urbano Juniors",
+          item_name: "Boys Slim Fit Jeans",
+          original_price: 604,
+          current_price: 1099,
+          discount_percentage: 45,
+          return_period: 14,
+          delivery_date: "10 Oct 2023",
+          rating: { "stars": 4.2, "count": 2434 },
+          tags:"kids"
+        },
+        {
+          id: "015",
+          image: '../images/15.png',
+          company: "Jack & Jones",
+          item_name: "Boys Jeans",
+          original_price: 799,
+          current_price: 2499,
+          discount_percentage: 75,
+          return_period: 14,
+          delivery_date: "10 Oct 2023",
+          rating: { "stars": 4.7, "count": 434 },
+          tags:"kids"
         }
+        
       ]
     
   }
