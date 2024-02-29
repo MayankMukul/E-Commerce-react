@@ -67,22 +67,22 @@ const Navbar = ()=>{
             </ul>
 
             <button className=" p-2 mt-1 bg-white text-black h-10 rounded-s-lg max-lg:hidden">
-              <Link to={`/search/${searchText}`}>
-                <IoSearch />
-              </Link>
+                <IoSearch onClick={()=>{
+                  if(searchText!=''){
+                    navigate(`/search/${searchText}`);
+                  }
+                }}/>
             </button>
             <input
               className="p-1 mr-2 mt-1 rounded-e-lg w-72 h-10 focus:outline-none max-lg:hidden"
               placeholder="Search By Name..."
               onKeyUp={(e) => {
-                if (e.key === "Enter") {
-                  console.log("enter");
+                if (e.key === "Enter" && searchText!=='') {
                   navigate(`/search/${searchText}`);
                 }
               }}
               onChange={(text) => {
                 setsearchText(text.target.value);
-                // console.log(text.key)
               }}
             />
             <ul className="flex">
@@ -128,22 +128,19 @@ const Navbar = ()=>{
         {searchbar ? (
           <div className="searchbar pb-3 bg-stone-200 text-center lg:hidden">
             <button className="p-1  bg-white text-black  rounded-s-lg">
-              <Link to={`/search/${searchText}`}>
                 <IoSearch className="inline" />
-              </Link>
             </button>
             <input
               className="p-1   rounded-e-lg w-2/3  focus:outline-none"
               placeholder="Search By Name..."
               onKeyUp={(e) => {
-                if (e.key === "Enter") {
+                if (e.key === "Enter"  && searchText !== "") {
                   console.log("enter");
                   navigate(`/search/${searchText}`);
                 }
               }}
               onChange={(text) => {
                 setsearchText(text.target.value);
-                // console.log(text.key)
               }}
             />
           </div>
