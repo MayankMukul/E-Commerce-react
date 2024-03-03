@@ -46,13 +46,11 @@ function ItemDetail() {
         {/* <h1 className="text-xl md:font-bold bg-black text-white rounded p-2">
           {item[0].company}
         </h1> */}
-        <div className="flex">
+        <div className="md:flex">
           <img
             src={`${item[0].image}`}
             alt="unable to fetch"
-            height="400"
-            width="350"
-            className="rounded p-1"
+            className="rounded p-1 md:h-1/4 md:w-1/4 h-2/3 w-2/3"
           />
 
           <div className="m-2 ">
