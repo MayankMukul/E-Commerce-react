@@ -30,10 +30,10 @@ const BagElement = ()=>{
       const BagItem = (props)=>{ 
         return (
             <div className="flex bg-slate-100 m-2 p-1 rounded ">
-                <div className="w-1/2">
-                <p>{props.data?.image}</p>
+                <div className="w-1/2 p-1">
+                  <img src={props.data?.image}/>
                 </div>
-                <div className="w-1/2">
+                <div className="w-1/2 p-1">
                 <p>{props.data?.item_name}</p>
                 </div>
                 <div className="w-1/2 text-right p-2 text-lg text-red-400 ">
