@@ -10,15 +10,12 @@ const BagElement = ()=>{
 
       const cart  = useSelector(store =>store.cart.items );
       const list  = useSelector(store =>store.itemList.items );
-      // console.log(list);
-      // console.log(store);
       
       const itemInBag = list.filter(item =>{
         let itemIndex =  cart.indexOf(item.id);
         if(itemIndex>=0) return true;
       })
 
-      // console.log(itemInBag);
 
       const handleremoveItem =(props)=>{
         dispatch(removeItem(props))
@@ -31,7 +28,7 @@ const BagElement = ()=>{
         return (
             <div className="flex bg-slate-100 m-2 p-1 rounded ">
                 <div className="w-1/2 p-1">
-                  <img src={props.data?.image}/>
+                  <img src={props.data?.image} className='sm:h-28 md:h-32'/>
                 </div>
                 <div className="w-1/2 p-1">
                 <p>{props.data?.item_name}</p>
@@ -44,18 +41,14 @@ const BagElement = ()=>{
     }
 
     const BagSummary = (props)=>{
-        // const noOfItem = 2;
         let totalOriginalPrice = 0;
         let totalmrp = 0;
         let convenienceFee = 99;
         itemInBag.map((item)=> {
-          // console.log(item.current_price)
           totalOriginalPrice += item.original_price;
           totalmrp += item.current_price;
         })
         totalmrp +=convenienceFee;
-        // console.log(totalmrp);
-        // console.log(itemInBag);
         return(
             <div className="m-2">
                 <p>Price Details({cart.length} Items)</p>
