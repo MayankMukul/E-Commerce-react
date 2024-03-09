@@ -1,9 +1,25 @@
+import photo1 from "../images/1.png";
+import photo2 from "../images/2.png";
+import photo3 from "../images/3.png";
+import photo4 from "../images/4.png";
+import photo5 from "../images/5.png";
+import photo6 from "../images/6.png";
+import photo7 from "../images/7.png";
+import photo8 from "../images/8.png";
+import photo9 from "../images/9.png";
+import photo10 from "../images/10.png";
+import photo11 from "../images/11.png";
+import photo12 from "../images/12.png";
+import photo13 from "../images/13.png";
+import photo14 from "../images/14.png";
+import photo15 from "../images/15.png";
+
 const DATA = {
     items: 
       [
         {
           id: "001",
-          image: "./images/1.jpg",
+          image: photo1,
           company: "Carlton London",
           item_name: "Rhodium-Plated CZ Floral Studs",
           original_price: 1045,
@@ -16,12 +32,12 @@ const DATA = {
         },
         {
           id: "002",
-          image: "images/2.jpg",
-          company: "CUKOO",
-          item_name: "Women Padded Halter Neck Swimming Dress",
-          original_price: 2599,
-          current_price: 1507,
-          discount_percentage: 42,
+          image: photo2,
+          company: "plusS",
+          item_name: "Olive Green A-Line Top",
+          original_price: 1999,
+          current_price: 699,
+          discount_percentage: 65,
           return_period: 14,
           delivery_date: "10 Oct 2023",
           rating: { "stars": 4.3, "count": 24 },
@@ -29,9 +45,9 @@ const DATA = {
         },
         {
           id: "003",
-          image: "images/3.jpg",
+          image: photo3,
           company: "NUEVOSDAMAS",
-          item_name: "Women Red & White Printed A-Line Knee-Length Skirts",
+          item_name: "Women Red & White Floral Printed A-Line Knee-Length Skirts",
           original_price: 1599,
           current_price: 495,
           discount_percentage: 69,
@@ -42,7 +58,7 @@ const DATA = {
         },
         {
           id: "004",
-          image: "images/4.jpg",
+          image: photo4,
           company: "ADIDAS",
           item_name: "Indian Cricket ODI Jersey",
           original_price: 999,
@@ -55,7 +71,7 @@ const DATA = {
         },
         {
           id: "005",
-          image: "images/5.jpg",
+          image: photo5,
           company: "Roadster",
           item_name: "Pure Cotton T-shirt",
           original_price: 1399,
@@ -68,7 +84,7 @@ const DATA = {
         },
         {
           id: "006",
-          image: "images/6.jpg",
+          image: photo6,
           company: "Nike",
           item_name: "Men ReactX Running Shoes",
           original_price: 14995,
@@ -81,7 +97,7 @@ const DATA = {
         },
         {
           id: "007",
-          image: "images/7.jpg",
+          image: photo7,
           company: "The Indian Garage Co",
           item_name: "Men Slim Fit Regular Shorts",
           original_price: 1599,
@@ -92,7 +108,7 @@ const DATA = {
         },
         {
           id: "008",
-          image: "images/8.jpg",
+          image: photo8,
           company: "Nivea",
           item_name: "Men Fresh Deodrant 150ml",
           original_price: 285,
@@ -105,7 +121,7 @@ const DATA = {
         },
         {
           id: "009",
-          image: "images/8.jpg",
+          image: photo9,
           company: "Nivea Creme",
           item_name: "Men Fresh Creme 150ml",
           original_price: 285,
@@ -118,7 +134,7 @@ const DATA = {
         },
         {
           id: "010",
-          image: "images/8.jpg",
+          image: photo10,
           company: "Nivea Rolon",
           item_name: "Men Fresh Rolon 150ml",
           original_price: 285,
@@ -131,7 +147,7 @@ const DATA = {
         },
         {
           id: "011",
-          image: "images/11.png",
+          image: photo11,
           company: "KINSEY",
           item_name: "Boys Pluto Printed T-shirt",
           original_price: 799,
@@ -144,7 +160,7 @@ const DATA = {
         },
         {
           id: "012",
-          image: "images/12.png",
+          image: photo12,
           company: "BONKIDS",
           item_name: "Boys Mickey Mouse Printed T-shirt",
           original_price: 1332,
@@ -157,7 +173,7 @@ const DATA = {
         },
         {
           id: "013",
-          image: "images/13.png",
+          image: photo13,
           company: "Jack & Jones",
           item_name: "Boys T-shirt",
           original_price: 599,
@@ -170,7 +186,7 @@ const DATA = {
         },
         {
           id: "014",
-          image: "images/14.png",
+          image: photo14,
           company: "Urbano Juniors",
           item_name: "Boys Slim Fit Jeans",
           original_price: 604,
@@ -183,7 +199,7 @@ const DATA = {
         },
         {
           id: "015",
-          image: '../images/15.png',
+          image: photo15,
           company: "Jack & Jones",
           item_name: "Boys Jeans",
           original_price: 799,

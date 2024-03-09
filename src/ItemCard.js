@@ -6,13 +6,11 @@ import { GoHeart } from "react-icons/go";
 
 const  ItemCard=(props)=>{
 
-  // console.log(props.item.image);
     let items = useSelector(store=>store.cart.items);
       const elementFound = items.indexOf(props.item.id)>=0;
 
       const wishlist = useSelector(store => store.wishList.items);
       const wishlistelementfound = wishlist.indexOf(props.item.id)>=0;
-      // console.log(wishlistelementfound)
     
       const dispatch = useDispatch();
 
