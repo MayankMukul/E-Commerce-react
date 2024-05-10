@@ -2,10 +2,10 @@
   "name": "e-commerce-react",
   "version": "1.0.0",
   "description": "e-commerce site",
-  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "test": "zest"
+    "test": "zest",
+    "build": "parcel build index.html"
   },
   "author": "Mayank",
   "license": "ISC",
